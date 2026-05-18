@@ -1,0 +1,47 @@
+# 构建文件
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# 签名文件
+*.jks
+*.keystore
+
+# 日志文件
+*.log
+
+# Android Studio配置
+.idea/
+*.iml
+*.apk
+*.ap_
+*.aab
+
+# 临时文件
+*.tmp
+*.swp
+*~
+
+# 编译生成的文件
+*.class
+bin/
+gen/
+out/
+release/
+
+# 依赖文件
+.gradle/
+build/
+app/build/

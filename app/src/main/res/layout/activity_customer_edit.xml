@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 基本信息 -->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="基本信息"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- 客户姓名 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="姓名"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="请输入客户姓名"
+                            android:background="@drawable/edit_text_background"
+                            android:padding="10dp"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_import_contacts"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@android:drawable/ic_menu_add"
+                            android:tint="@color/colorPrimary"
+                            android:padding="8dp"
+                            android:layout_marginStart="8dp"
+                            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- 联系电话 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="电话"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入联系电话"
+                        android:inputType="phone"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 现居地址 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="地址"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <EditText
+                        android:id="@+id/et_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入现居地址"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 客户等级 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="等级"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_level_a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="A级"
+                            android:paddingEnd="16dp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_level_b"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="B级"
+                            android:paddingEnd="16dp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_level_c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="C级"
+                            android:paddingEnd="16dp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_level_d"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="D级" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <!-- 客户需求 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="需求"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_need"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入客户需求"
+                        android:minLines="3"
+                        android:gravity="top"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 客户备注（用于存放微信号等） -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="备注"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_remark"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入备注信息"
+                        android:minLines="2"
+                        android:gravity="top"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <!-- 跟进信息 -->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="跟进信息"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- 跟进状态 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="状态"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <Spinner
+                        android:id="@+id/sp_status"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+
+                <!-- 跟进日期 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="日期"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/tv_follow_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="点击选择"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:clickable="true" />
+
+                </LinearLayout>
+
+                <!-- 跟进记录 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="记录"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_follow_record"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入跟进记录"
+                        android:minLines="3"
+                        android:gravity="top"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 跟进方式 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="方式"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <Spinner
+                        android:id="@+id/sp_follow_method"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+
+                <!-- 跟进结果 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="结果"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_follow_result"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入跟进结果"
+                        android:minLines="2"
+                        android:gravity="top"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 跟进备注 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="备注"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_follow_remark"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入跟进备注"
+                        android:minLines="2"
+                        android:gravity="top"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <!-- 签单信息 -->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="签单信息"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- 签约日期 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="日期"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <TextView
+                        android:id="@+id/tv_sign_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="点击选择"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:clickable="true" />
+
+                </LinearLayout>
+
+                <!-- 合同编码 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="合同号"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <EditText
+                        android:id="@+id/et_contract_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入合同编码"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 产品名称 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="产品"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <EditText
+                        android:id="@+id/et_product_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入产品名称"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 合同金额 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="金额"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <EditText
+                        android:id="@+id/et_contract_amount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入合同金额"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 已付金额 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="已付"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <EditText
+                        android:id="@+id/et_paid_amount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入已付金额"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 签约人 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="签约人"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+
+                    <EditText
+                        android:id="@+id/et_sign_person"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入签约人"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 签约备注 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="备注"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_sign_remark"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="请输入签约备注"
+                        android:minLines="2"
+                        android:gravity="top"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <!-- 操作按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="保存"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="取消"
+                android:backgroundTint="@color/gray"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

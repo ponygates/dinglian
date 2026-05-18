@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 工具栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- 标题栏 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_text"
+                android:text="@string/subtitle"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- 设置按钮 -->
+            <ImageButton
+                android:id="@+id/settings_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_preferences"
+                android:tint="@color/white" />
+
+        </RelativeLayout>
+
+        <!-- 搜索框 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/search_background"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:tint="@color/gray" />
+
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/search_hint"
+                android:inputType="text"
+                android:paddingStart="8dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Fragment容器 -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 底部导航栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:elevation="8dp">
+
+        <!-- 管理 -->
+        <LinearLayout
+            android:id="@+id/nav_manage"
+            style="@style/NavItem"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_manage_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_agenda"
+                android:tint="@color/gray" />
+
+            <TextView
+                android:id="@+id/nav_manage_text"
+                style="@style/NavItemText"
+                android:text="@string/manage"
+                android:textColor="@color/gray" />
+
+        </LinearLayout>
+
+        <!-- 跟踪 -->
+        <LinearLayout
+            android:id="@+id/nav_track"
+            style="@style/NavItem"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_track_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_myplaces"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/nav_track_text"
+                style="@style/NavItemText"
+                android:text="@string/track"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <!-- 签单 -->
+        <LinearLayout
+            android:id="@+id/nav_sign"
+            style="@style/NavItem"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_sign_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_call"
+                android:tint="@color/gray" />
+
+            <TextView
+                android:id="@+id/nav_sign_text"
+                style="@style/NavItemText"
+                android:text="@string/sign"
+                android:textColor="@color/gray" />
+
+        </LinearLayout>
+
+        <!-- 统计 -->
+        <LinearLayout
+            android:id="@+id/nav_statistics"
+            style="@style/NavItem"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_statistics_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_info_details"
+                android:tint="@color/gray" />
+
+            <TextView
+                android:id="@+id/nav_statistics_text"
+                style="@style/NavItemText"
+                android:text="@string/statistics"
+                android:textColor="@color/gray" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
