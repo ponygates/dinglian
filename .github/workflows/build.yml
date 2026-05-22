@@ -18,25 +18,23 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
+        cache: 'gradle'
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Setup Android SDK
+    - name: Setup minimal Android SDK
       uses: android-actions/setup-android@v2
       with:
         api-level: 28
         build-tools: 28.0.3
 
-    - name: Build Release APK
-      run: |
-        echo "=== 开始编译 APK ==="
-        ./gradlew clean assembleRelease --stacktrace
-        echo "=== 编译完成 ==="
-        ls -la app/build/outputs/apk/release/
+    - name: Build APK
+      run: ./gradlew assembleRelease --no-daemon --no-parallel
 
-    - name: Upload APK Artifact
+    - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: dinglian-apk
         path: app/build/outputs/apk/release/
+        if-no-files-found: error
