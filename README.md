@@ -2,7 +2,51 @@
 
 一款专门为保险代理人设计的客户定期联系管理工具，基于张瀞心《定联》开发。
 
-## 功能特性
+---
+
+## 📱 立即获取 APK（3种方式）
+
+### 方式一：使用 Android Studio 编译（推荐）⭐
+
+**最简单！**
+1. 下载 Android Studio：https://developer.android.com/studio
+2. 克隆项目：`git clone https://github.com/ponygates/dinglian.git`
+3. 在 Android Studio 中打开项目
+4. 菜单 `Build` → `Generate Signed Bundle / APK...`
+5. 使用签名信息（密码：dinglian123）
+6. 完成！
+
+详细步骤：[QUICK_START.md](QUICK_START.md)
+
+### 方式二：一键编译脚本
+
+**Windows 用户：**
+双击运行 `BUILD_APK.bat`
+
+**Mac/Linux 用户：**
+```bash
+chmod +x build_apk.sh
+./build_apk.sh
+```
+
+### 方式三：GitHub Actions 自动编译
+
+查看：https://github.com/ponygates/dinglian/actions
+
+---
+
+## 🔐 签名配置
+
+| 配置项 | 值 |
+|--------|-----|
+| 密钥文件 | app/dinglian-release-key.jks |
+| 密钥库密码 | dinglian123 |
+| 密钥别名 | dinglian |
+| 密钥密码 | dinglian123 |
+
+---
+
+## ⭐ 功能特性
 
 ### 客户分级管理
 - **A级**（挺你到底）：已送保险建议书，需每周联系一次
@@ -25,13 +69,13 @@
 - 支持导入手机联系人
 - 支持数据备份和恢复（开发中）
 
-## 开发环境
+## 📋 开发环境
 - Android Studio 3.5+
 - Java 8
 - Android SDK 26 (Android 8.0)
 - Gradle 5.4.1+
 
-## 项目结构
+## 📁 项目结构
 ```
 app/
 ├── src/
@@ -49,7 +93,7 @@ app/
 └── ...
 ```
 
-## 使用说明
+## 💡 使用说明
 
 1. 在管理页面添加客户信息
 2. 设置客户等级和跟进状态
@@ -57,8 +101,8 @@ app/
 4. 在跟踪页面查看需要联系的客户
 5. 点击微信或电话图标可快速联系
 
-## 作者
+## 👨‍💼 作者
 新华保险 司马君
 
-## 版本
+## 📌 版本
 1.0.0
