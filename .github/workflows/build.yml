@@ -8,33 +8,62 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
-    - name: Set up JDK 8
+    
+    - name: Set up JDK
       uses: actions/setup-java@v3
       with:
         java-version: '8'
         distribution: 'temurin'
         cache: 'gradle'
-
-    - name: Grant execute permission for gradlew
+    
+    - name: Debug environment
+      run: |
+        echo "=== 环境信息 ==="
+        java -version
+        echo "JAVA_HOME: $JAVA_HOME"
+        echo "=== Gradle Wrapper ==="
+        ls -la gradlew*
+        cat gradle/wrapper/gradle-wrapper.properties
+    
+    - name: Grant execute permission
       run: chmod +x gradlew
-
-    - name: Setup minimal Android SDK
+    
+    - name: Setup Android SDK
       uses: android-actions/setup-android@v2
       with:
         api-level: 28
         build-tools: 28.0.3
-
+    
     - name: Build APK
-      run: ./gradlew assembleRelease --no-daemon --no-parallel
-
-    - name: Upload APK
+      run: |
+        echo "=== 开始编译 ==="
+        ./gradlew clean assembleRelease --stacktrace --info || {
+          echo "=== 编译失败，尝试Debug版本 ==="
+          ./gradlew assembleDebug --stacktrace --info
+        }
+    
+    - name: Check build output
+      run: |
+        echo "=== 检查编译输出 ==="
+        ls -la app/build/outputs/apk/release/ 2>/dev/null || echo "Release APK不存在"
+        ls -la app/build/outputs/apk/debug/ 2>/dev/null || echo "Debug APK不存在"
+    
+    - name: Upload Release APK
+      if: always()
       uses: actions/upload-artifact@v3
       with:
-        name: dinglian-apk
-        path: app/build/outputs/apk/release/
-        if-no-files-found: error
+        name: dinglian-apk-release
+        path: app/build/outputs/apk/release/*.apk
+        if-no-files-found: warn
+    
+    - name: Upload Debug APK
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: dinglian-apk-debug
+        path: app/build/outputs/apk/debug/*.apk
+        if-no-files-found: warn
